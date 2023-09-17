@@ -36,7 +36,7 @@ import {
   pageTemplateExamplesSections,
 } from './views/page_template/examples';
 
-import { SitewideSearchExample } from './views/selectable/selectable_templates/sitewide_example';
+import { SitewideSearchExample } from '../views/selectable/selectable_templates/sitewide_example';
 
 // Services
 
@@ -90,12 +90,12 @@ import { ControlBarExample } from './views/control_bar/control_bar_example';
 
 
 
-import { DataGridExample } from './views/datagrid/basics/datagrid_example';
-import { DataGridCellsExample } from './views/datagrid/cells_popovers/datagrid_cells_example';
-import { DataGridToolbarExample } from './views/datagrid/toolbar/datagrid_toolbar_example';
-import { DataGridColumnsExample } from './views/datagrid/schema_columns/datagrid_columns_example';
-import { DataGridStylingExample } from './views/datagrid/styling/datagrid_styling_example';
-import { DataGridAdvancedExample } from './views/datagrid/advanced/datagrid_advanced_example';
+import { DataGridExample } from '../views/datagrid/basics/datagrid_example';
+import { DataGridCellsExample } from '../views/datagrid/cells_popovers/datagrid_cells_example';
+import { DataGridToolbarExample } from '../views/datagrid/toolbar/datagrid_toolbar_example';
+import { DataGridColumnsExample } from '../views/datagrid/schema_columns/datagrid_columns_example';
+import { DataGridStylingExample } from '../views/datagrid/styling/datagrid_styling_example';
+import { DataGridAdvancedExample } from '../views/datagrid/advanced/datagrid_advanced_example';
 
 import { DatePickerExample } from './views/date_picker/date_picker_example';
 
@@ -121,15 +121,15 @@ import { FlyoutExample } from './views/flyout/flyout_example';
 
 import { FocusTrapExample } from './views/focus_trap/focus_trap_example';
 
-import { FormControlsExample } from './views/form_controls/form_controls_example';
+import { FormControlsExample } from '../views/form_controls/form_controls_example';
 
 import { SelectionControlsExample } from './views/selection_controls/selection_controls_example';
 
-import { FormLayoutsExample } from './views/form_layouts/form_layouts_example';
+import { FormLayoutsExample } from '../views/form_layouts/form_layouts_example';
 
-import { FormCompressedExample } from './views/form_compressed/form_compressed_example';
+import { FormCompressedExample } from '../views/form_compressed/form_compressed_example';
 
-import { FormValidationExample } from './views/form_validation/form_validation_example';
+import { FormValidationExample } from '../views/form_validation/form_validation_example';
 
 import { HeaderExample } from './views/header/header_example';
 
@@ -203,7 +203,7 @@ import { ScrollExample } from './views/scroll/scroll_example';
 
 import { SearchBarExample } from './views/search_bar/search_bar_example';
 
-import { SelectableExample } from './views/selectable/selectable_example';
+import { SelectableExample } from '../views/selectable/selectable_example';
 
 import { SideNavExample } from './views/side_nav/side_nav_example';
 
@@ -219,9 +219,9 @@ import { SuggestExample } from './views/suggest/suggest_example';
 
 import { SuperDatePickerExample } from './views/super_date_picker/super_date_picker_example';
 
-import { TableExample } from './views/tables/tables_example';
+import { TableExample } from '../views/tables/tables_example';
 
-import { TableInMemoryExample } from './views/tables/tables_in_memory_example';
+import { TableInMemoryExample } from '../views/tables/tables_in_memory_example';
 
 import { TabsExample } from './views/tabs/tabs_example';
 
@@ -235,7 +235,7 @@ import { TimelineExample } from './views/timeline/timeline_example';
 
 import { TitleExample } from './views/title/title_example';
 
-import { ToastExample } from './views/toast/toast_example';
+import { ToastExample } from '../views/toast/toast_example';
 
 import { ToolTipExample } from './views/tool_tip/tool_tip_example';
 
