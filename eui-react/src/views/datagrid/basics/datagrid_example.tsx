@@ -13,17 +13,17 @@ import {
 
 import DataGrid from './datagrid';
 import { DataGridTopProps, EuiDataGridPaginationProps } from './_props';
-const dataGridSource = require('!!raw-loader!./datagrid');
+import dataGridSource from './datagrid';
 
 import DataGridContainer from './container';
-const dataGridContainerSource = require('!!raw-loader!./container');
+import dataGridContainerSource from './container';
 import DataGridFlex from './flex';
-const dataGridFlexSource = require('!!raw-loader!./flex');
+import dataGridFlexSource from './flex';
 
 import DataGridVirtualization from './virtualization';
-const dataGridVirtualizationSource = require('!!raw-loader!./virtualization');
+import dataGridVirtualizationSource from '!./virtualization';
 import DataGridVirtualizationConstrained from './virtualization_constrained';
-const dataGridVirtualizationConstrainedSource = require('!!raw-loader!./virtualization_constrained');
+import dataGridVirtualizationConstrainedSource from './virtualization_constrained';
 
 import {
   EuiDataGridColumn,

@@ -19,6 +19,7 @@ import {
   EuiContextMenuItem,
   EuiContextMenuPanel,
   EuiDataGrid,
+  EuiDataGridColumn,
   EuiFlyout,
   EuiFlyoutBody,
   EuiFlyoutFooter,
@@ -33,11 +34,11 @@ import {
   EuiScreenReaderOnly,
   EuiText,
   EuiTitle,
-} from '../../../../../src/components/';
+} from '@elastic/eui';
 
 const gridRef = createRef();
-const DataContext = createContext();
-const raw_data = [];
+const DataContext = createContext<any[]>([]);
+const raw_data:any[] = [];
 
 for (let i = 1; i < 100; i++) {
   const email = faker.internet.email();
@@ -66,14 +67,13 @@ for (let i = 1; i < 100; i++) {
   });
 }
 
-const RenderCellValue = ({ rowIndex, columnId, setCellProps }) => {
+const RenderCellValue = ({ rowIndex, columnId, setCellProps }:{ rowIndex:number, columnId:string, setCellProps:any}) => {
   const data = useContext(DataContext);
   useEffect(() => {
     if (columnId === 'amount') {
       if (data.hasOwnProperty(rowIndex)) {
         const numeric = parseFloat(
-          data[rowIndex][columnId].match(/\d+\.\d+/)[0],
-          10
+          data[rowIndex][columnId].match(/\d+\.\d+/)[0]
         );
         setCellProps({
           style: {
@@ -84,7 +84,7 @@ const RenderCellValue = ({ rowIndex, columnId, setCellProps }) => {
     }
   }, [rowIndex, columnId, setCellProps, data]);
 
-  function getFormatted() {
+  function getFormatted( rowIndex:number, columnId:string) {
     return data[rowIndex][columnId].formatted
       ? data[rowIndex][columnId].formatted
       : data[rowIndex][columnId];
@@ -95,13 +95,13 @@ const RenderCellValue = ({ rowIndex, columnId, setCellProps }) => {
     : null;
 };
 
-const columns = [
+const columns:EuiDataGridColumn[] = [
   {
     id: 'name',
     displayAsText: 'Name',
     defaultSortDirection: 'asc',
     cellActions: [
-      ({ rowIndex, columnId, Component }) => {
+      ({ rowIndex, columnId, Component }:{ rowIndex:number, columnId:string, Component:any}) => {
         const data = useContext(DataContext);
         return (
           <Component
@@ -113,7 +113,7 @@ const columns = [
           </Component>
         );
       },
-      ({ rowIndex, columnId, Component }) => {
+      ({ rowIndex, columnId, Component }:{ rowIndex:number, columnId:string, Component:any}) => {
         const data = useContext(DataContext);
         return (
           <Component
@@ -132,7 +132,7 @@ const columns = [
     displayAsText: 'Email address',
     initialWidth: 130,
     cellActions: [
-      ({ rowIndex, columnId, Component }) => {
+      ({ rowIndex, columnId, Component }:{ rowIndex:number, columnId:string, Component:any}) => {
         const data = useContext(DataContext);
         return (
           <Component
@@ -168,7 +168,7 @@ const columns = [
       ],
     },
     cellActions: [
-      ({ rowIndex, columnId, Component, isExpanded }) => {
+      ({ rowIndex, columnId, Component, isExpanded }:{ rowIndex:number, columnId:string, Component:any,isExpanded:any}) => {
         const data = useContext(DataContext);
         const onClick = isExpanded
           ? () =>
@@ -222,14 +222,15 @@ const trailingControlColumns = [
         <span>Controls</span>
       </EuiScreenReaderOnly>
     ),
-    rowCellRender: function RowCellRender({ rowIndex, colIndex }) {
+    rowCellRender: function RowCellRender({ rowIndex, colIndex }:{ rowIndex:number, colIndex:number}) {
       const [isPopoverVisible, setIsPopoverVisible] = useState(false);
       const closePopover = () => setIsPopoverVisible(false);
 
       const [isModalVisible, setIsModalVisible] = useState(false);
       const closeModal = () => {
         setIsModalVisible(false);
-        gridRef.current.setFocusedCell({ rowIndex, colIndex });
+        console.log({ rowIndex, colIndex })
+       // gridRef.current.setFocusedCell({ rowIndex, colIndex });
       };
       const showModal = () => {
         closePopover();
@@ -271,7 +272,7 @@ const trailingControlColumns = [
       const [isFlyoutVisible, setIsFlyoutVisible] = useState(false);
       const closeFlyout = () => {
         setIsFlyoutVisible(false);
-        gridRef.current.setFocusedCell({ rowIndex, colIndex });
+       // gridRef.current.setFocusedCell({ rowIndex, colIndex });
       };
       const showFlyout = () => {
         closePopover();
@@ -374,7 +375,7 @@ export default () => {
   // Pagination
   const [pagination, setPagination] = useState({ pageIndex: 0 });
   const onChangeItemsPerPage = useCallback(
-    (pageSize) =>
+    (pageSize:number) =>
       setPagination((pagination) => ({
         ...pagination,
         pageSize,
@@ -383,7 +384,7 @@ export default () => {
     [setPagination]
   );
   const onChangePage = useCallback(
-    (pageIndex) =>
+    (pageIndex:number) =>
       setPagination((pagination) => ({ ...pagination, pageIndex })),
     [setPagination]
   );
@@ -391,7 +392,7 @@ export default () => {
   // Sorting
   const [sortingColumns, setSortingColumns] = useState([]);
   const onSort = useCallback(
-    (sortingColumns) => {
+    (sortingColumns:any) => {
       setSortingColumns(sortingColumns);
     },
     [setSortingColumns]
@@ -402,7 +403,7 @@ export default () => {
     columns.map(({ id }) => id) // initialize to the full set of columns
   );
 
-  const onColumnResize = useRef((eventData) => {
+  const onColumnResize = useRef((eventData: any) => {
     console.log(eventData);
   });
 
@@ -423,7 +424,7 @@ export default () => {
           onChangePage: onChangePage,
         }}
         onColumnResize={onColumnResize.current}
-        ref={gridRef}
+       // ref={gridRef}
       />
     </DataContext.Provider>
   );

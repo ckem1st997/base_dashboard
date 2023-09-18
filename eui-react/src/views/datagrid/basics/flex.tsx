@@ -7,7 +7,7 @@ import {
   EuiLink,
   EuiFlexItem,
   EuiFlexGroup,
-} from '../../../../../src/components';
+} from '@elastic/eui';
 
 const columns = [
   {
@@ -27,7 +27,7 @@ const columns = [
   },
 ];
 
-const data = [];
+const data:any[] = [];
 
 for (let i = 1; i < 20; i++) {
   data.push({

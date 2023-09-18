@@ -56,7 +56,7 @@ export default () => {
   const setPageSize = useCallback(
     (pageSize:number) =>
       setPagination(
-        (pagination) => ({ ...pagination, pageSize, pageIndex: 0 }),[]
+        (pagination) => ({ ...pagination, pageSize, pageIndex: 0 })
       ),
     []
   );
@@ -78,7 +78,7 @@ export default () => {
           border: 'horizontal',
           header: 'underline',
         }}
-        renderCellValue={({ rowIndex, columnId }) => data[rowIndex][columnId]}
+        renderCellValue={({ rowIndex, columnId }:{rowIndex:number, columnId:string}) => data[rowIndex][columnId as keyof typeof data]}
         pagination={{
           ...pagination,
           onChangeItemsPerPage: setPageSize,
