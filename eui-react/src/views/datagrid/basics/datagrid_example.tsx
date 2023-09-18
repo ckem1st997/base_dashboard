@@ -9,7 +9,7 @@ import {
   EuiText,
   EuiSpacer,
   EuiLink,
-} from '../../../../../src/components';
+} from '@elastic/eui';
 
 import DataGrid from './datagrid';
 import { DataGridTopProps, EuiDataGridPaginationProps } from './_props';

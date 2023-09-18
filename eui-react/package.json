@@ -14,11 +14,13 @@
     "@elastic/eui": "^88.3.0",
     "@emotion/css": "^11.11.2",
     "@emotion/react": "^11.11.1",
+    "@faker-js/faker": "8.0.2",
     "moment": "^2.29.4",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
+    "react-view": "^2.3.7",
     "sass": "^1.67.0"
   },
   "devDependencies": {

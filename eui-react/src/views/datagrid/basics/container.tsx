@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { faker } from '@faker-js/faker';
 
-import { EuiDataGrid, EuiPanel, EuiLink } from '../../../../../src/components';
+import { EuiDataGrid, EuiPanel, EuiLink } from '@elastic/eui';
 
 const columns = [
   {
@@ -21,15 +21,23 @@ const columns = [
   },
 ];
 
-const data = [];
+const data:DataRaw[] = [];
 
 for (let i = 1; i < 20; i++) {
   data.push({
     name: `${faker.name.lastName()}, ${faker.name.firstName()} ${faker.name.suffix()}`,
-    email: faker.internet.email(),
+    email: <EuiLink href="http://google.com">faker.internet.email()</EuiLink>,
     city: <EuiLink href="http://google.com">{faker.address.city()}</EuiLink>,
     country: faker.address.country(),
     account: faker.finance.account(),
+    direction: '',
+    location: <EuiLink href="http://google.com">{faker.address.city()}</EuiLink>,
+    date: '',
+    amount: '',
+    phone: '',
+    version: '',
+    id: '',
+    soft: 0
   });
 }
 

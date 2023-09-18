@@ -7,8 +7,9 @@ import {
   EuiSpacer,
 } from '@elastic/eui';
 
-import { getPropsFromComponent } from '../../services/props/get_props';
-import { getDescription } from '../../services/props/get_description';
+import { getPropsFromComponent } from '../../service/props/get_props';
+import { getDescription } from '../../service/props/get_description';
+
 
 export interface BasicItem {
   id: string;

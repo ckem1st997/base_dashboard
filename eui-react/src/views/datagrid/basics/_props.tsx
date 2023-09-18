@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import {
   EuiDataGrid,
   EuiDataGridPaginationProps as _EuiDataGridPaginationProps,
-} from '../../../../../src/components';
+} from '@elastic/eui';
 
 import { DataGridPropsTable } from '../_props_table';
 import { gridSnippets } from '../_snippets';
