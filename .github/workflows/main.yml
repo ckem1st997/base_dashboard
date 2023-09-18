@@ -16,16 +16,19 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 18
-    - name: Cd eui-react
-      run: cd eui-react
     - name: Install Yarn
-      run: npm install -g yarn
+      run: |
+        cd eui-react
+        npm install -g yarn
 
     - name: Install dependencies
-      run: yarn install
+      run: |
+        cd eui-react
+        yarn install
 
     - name: Build and deploy
       run: |
+        cd eui-react
         yarn build
         git config --global user.name "hopnk"
         git config --global user.email "hopxc1997@gmail.com"
